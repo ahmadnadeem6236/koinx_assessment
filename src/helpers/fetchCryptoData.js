@@ -3,7 +3,8 @@ import {
   BitcoinData,
   EthereumData,
   MaticData,
-} from "../models/cryptoDataSchema.models";
+} from "../models/cryptoDataSchema.models.js";
+
 async function fetchCryptoData() {
   try {
     const response = await axios.get(
