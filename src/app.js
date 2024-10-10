@@ -20,6 +20,7 @@ let minutes = 120,
 
 setInterval(() => {
   console.log("Running from every 2 hour");
+  saveCryptoData();
 }, the_interval);
 
 app.use("/", router);
