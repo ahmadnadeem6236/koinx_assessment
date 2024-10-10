@@ -1,5 +1,7 @@
 import express from "express";
 import cors from "cors"
+import saveCryptoData from "./helpers/fetchCryptoData.js";
+
 
 const app = express()
 
@@ -10,7 +12,7 @@ app.use(
 })
 )
 
-
+saveCryptoData()
 
 
 
