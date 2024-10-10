@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import saveCryptoData from "./helpers/fetchCryptoData.js";
-import cron from "node-cron";
+
 import router from "./routes/route.js";
 
 const app = express();
@@ -12,18 +12,15 @@ app.use(
     credential: true,
   })
 );
-const task = cron.schedule(
-  "* 2 * * *",
-  () => {
-    saveCryptoData();
-    console.log("Task run");
-  },
-  {
-    scheduled: true,
-  }
-);
 
-task.start();
+saveCryptoData();
+
+let minutes = 120,
+  the_interval = minutes * 60 * 1000;
+
+setInterval(() => {
+  console.log("Running from every 2 hour");
+}, the_interval);
 
 app.use("/", router);
 
