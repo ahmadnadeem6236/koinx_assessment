@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors"
 import saveCryptoData from "./helpers/fetchCryptoData.js";
-
+import cron from "node-cron";
 
 const app = express()
 
@@ -11,9 +11,11 @@ app.use(
     credential: true
 })
 )
+const task = cron.schedule('* 2 * * *', () =>  {
+    saveCryptoData()
+    console.log('Task run');
+  });
 
-saveCryptoData()
-
-
+  task.start()
 
 export { app }

@@ -79,24 +79,6 @@ async function saveCryptoData() {
                 console.error(`Error saving ${id} data`, error)
             }
         }
-
-
-
-
-    //   const { id, current_price, market_cap, } = coin;
-  
-    //   const newCryptoData = new CryptoData({
-    //     coinId: id,
-    //     price: current_price,
-    //     marketCap: market_cap,
-    //   });
-  
-    //   try {
-    //     await newCryptoData.save();
-    //     console.log(`${id} data saved.`);
-    //   } catch (error) {
-    //     console.error(`Error saving ${id} data:`, error);
-    //   }
     });
   }
 
